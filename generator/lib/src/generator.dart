@@ -82,7 +82,7 @@ class RetrofitGenerator extends GeneratorForAnnotation<retrofit.RestApi> {
         .where((c) => !c.isFactory && !c.isDefaultConstructor);
     final classBuilder = Class((c) {
       c
-        ..name = '_$className'
+        ..name = '${className}Impl'
         ..types.addAll(element.typeParameters.map((e) => refer(e.name)))
         ..fields.addAll([_buildDioFiled(), _buildBaseUrlFiled(baseUrl)])
         ..constructors.addAll(
